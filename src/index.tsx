@@ -4,7 +4,7 @@ import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ClerkProvider } from '@clerk/clerk-react'
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const PUBLISHABLE_KEY = process.env.REACT_APP_CLERK_FRONTEND_API
  
