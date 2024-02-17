@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Logo from '../images/logo.png';
 import MenuButton from './MenuButton';
 
-import { useNavigate } from 'react-router-dom';
-import { SignedOut, SignedIn, useUser, useClerk } from '@clerk/clerk-react';
+import { SignedOut, SignedIn, useUser, SignOutButton } from '@clerk/clerk-react';
 
 const NavBarItem = "text-l font-semibold"
 const NavList = 'mx-2'
@@ -15,18 +14,10 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ isMenuOpen, toggleMenu }) => {
   const { user } = useUser();
-  const clerk = useClerk();
-  const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
-  };
-
-  const handleSignOut = async () => {
-    var SignOut = await clerk.signOut();
-    navigate('/');
-    console.log(SignOut);
   };
 
   return (
@@ -66,14 +57,17 @@ const NavBar: React.FC<NavBarProps> = ({ isMenuOpen, toggleMenu }) => {
             <SignedIn>
             {user && (
               <div onClick={toggleDropdown} className="cursor-pointer">
-                <img src={user.imageUrl} alt="Profile" className="w-10 h-10 rounded-full"/>
+                <img src={user.imageUrl} alt="Profile" className="w-10 h-10 overflow-hidden rounded-full object-cover"/>
               </div>
             )}
             {dropdownOpen && (
               <div className="absolute right-8 md:right-16 mt-[3rem] py-2 w-48 border border-black-300 bg-white rounded-lg shadow-xl">
-                <a href="/profile" className="block mx-2 rounded-md px-4 py-2 text-gray-800 hover:bg-gray-100">My Profile</a>
-                <a href="/edit-profile" className="block mx-2 rounded-md px-4 py-2 text-gray-800 hover:bg-gray-100">Edit Profile</a>
-                <a href="/" onClick={handleSignOut} className="block mx-2 rounded-md px-4 py-2 text-gray-800 hover:bg-gray-100">Log Out</a>
+                <button>
+                  <a href="/profile" className='rounded-md m-4 text-bold-500'>View Profile</a>
+                </button>
+                <div className='rounded-md mx-4 text-bold-500'>
+                  <SignOutButton />
+                </div>
               </div>
             )}
             </SignedIn>
@@ -81,7 +75,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMenuOpen, toggleMenu }) => {
               <a href="/sign-in" className='p-2 px-4 bg-blue-600 rounded-md text-white font-semibold w-[157px]'>
                 Sign in / Sign Up
               </a>
-            </SignedOut>
+            </SignedOut >
           </div> 
         </div>
       </nav>

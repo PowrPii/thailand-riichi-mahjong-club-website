@@ -36,6 +36,9 @@ const Home: React.FC = () => {
                     </SignedOut> 
                 </div>
             </div>
+            <div>
+                <div className='w-[80%]'></div>
+            </div>
         </>
     );
 };
