@@ -18,7 +18,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode> 
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} appearance={{elements: {footer:"hidden"}}}>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <ChakraProvider>
         <App />
       </ChakraProvider>

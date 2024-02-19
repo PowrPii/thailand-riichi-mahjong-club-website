@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
 
 interface PrivateRouteProps {
-  children: JSX.Element; // Define children as JSX.Element
+  children: JSX.Element; 
 }
 
 const PrivateRoute = ({ children }: PrivateRouteProps) => {
