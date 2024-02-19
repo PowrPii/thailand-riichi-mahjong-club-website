@@ -16,18 +16,6 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ isOpen }) => {
                 <a href="/" className={NavBarItem}>Home</a>
               </li>
               <li className={NavList}>
-                <a href="/about" className={NavBarItem}>About</a>
-              </li>
-              <li className={NavList}>
-                <a href="/rules" className={NavBarItem}>Rules</a>
-              </li>
-              <li className={NavList}>
-                <a href="/rules" className={NavBarItem}>Session</a>
-              </li>
-              <li className={NavList}>
-                <a href="/rules" className={NavBarItem}>Contact</a>
-              </li>
-              <li className={NavList}>
                 <a href="/profile" className={NavBarItem}>Profile</a>
               </li>          
             </ul>
