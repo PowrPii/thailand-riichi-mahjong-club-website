@@ -11,6 +11,7 @@ import ProfilePage from './pages/Profile';
 import PrivacyAndPolicy from './pages/PrivacyAndPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import ContactUsPage from './pages/ContactUs';
+import AboutPage from './pages/About';
 
 
 function App() {
@@ -25,23 +26,30 @@ function App() {
         <SignedOut>
           <Routes>
             <Route path="/" element={<Home />} />
+
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/privacy-policy" element={<PrivacyAndPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            
             <Route path="/sign-in" element={<SignInPage />} />
             <Route path="/sign-in/:action" element={<SignInPage />} />
             <Route path="/sign-up" element={<SignupPage />} />
             <Route path="/sign-up/:action" element={<SignupPage />} />
-            <Route path="/privacy-policy" element={<PrivacyAndPolicy />} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+
             <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
-            <Route path="/contact-us" element={<ContactUsPage />} />
           </Routes>
         </SignedOut>
         <SignedIn>
           <Routes>
             <Route path="/" element={<Home />} />
+            
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/privacy-policy" element={<PrivacyAndPolicy />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/contact-us" element={<ContactUsPage />} />
           </Routes>
         </SignedIn>
       </Router>

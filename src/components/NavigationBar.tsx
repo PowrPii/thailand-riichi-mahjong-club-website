@@ -35,7 +35,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMenuOpen, toggleMenu }) => {
                 <a href="/" className={NavBarItem}>Home</a>
               </li>
               <li className={NavList}>
-                <a href="/profile" className={NavBarItem}>Profile</a>
+                <a href="/about" className={NavBarItem}>About</a>
               </li>          
             </ul>
           </div>
@@ -54,7 +54,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMenuOpen, toggleMenu }) => {
                   <h2> <b> Signed in as <br/> {String(user?.primaryEmailAddress)}</b></h2>
                 </div>
                 <button>
-                  <a href="/profile" className='rounded-md m-4 text-bold-500 py-2'>View Profile</a>
+                  <a href="/profile" className='rounded-md m-4 text-bold-500 py-2'>My Profile</a>
                 </button>
                 <div className='rounded-md mx-4 text-bold-500 py-2'>
                   <SignOutButton />

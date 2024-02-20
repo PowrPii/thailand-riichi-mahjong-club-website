@@ -8,6 +8,9 @@ module.exports = {
       height : {
         '8vh' : '8vh',
         '9/10' : '90vh',
+      },
+      backgroundImage : {
+        'about-banner' : 'url("../images/banner.JPG")',
       }
     },
   },

@@ -9,13 +9,13 @@ const Footer = () => {
                     <a href="/about">About</a>
                 </div>
                 <div className='pb-6'>
-                    <a href="/contact-us">Contact Us</a>
+                    <a className="hover:text-white" href="/contact-us">Contact Us</a>
                 </div> 
                 <div className='pb-6'>
-                    <a href="/privacy-policy">Privacy and Policy</a>
+                    <a className="hover:text-white" href="/privacy-policy">Privacy and Policy</a>
                 </div> 
                 <div className='pb-6'>
-                    <a href="/terms-and-conditions">Terms and Conditions</a>
+                    <a className="hover:text-white" href="/terms-and-conditions">Terms and Conditions</a>
                 </div> 
             </div>
             <p className='mt-10 text-center text-xs'>&copy; 2024 TRMC. All rights reserved.</p>
